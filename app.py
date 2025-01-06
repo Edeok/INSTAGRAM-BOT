@@ -9,6 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 import threading
+import os
+
 
 app = Flask(__name__)
 
@@ -172,4 +174,4 @@ def run_bot():
     bot_active = False
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))

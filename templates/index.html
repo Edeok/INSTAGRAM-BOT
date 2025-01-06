@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Bienvenido al Bot de Instagram</h1>
+    <p>Este bot te permite seguir cuentas de Instagram automáticamente.</p>
+    
+    <p>Cuentas seguidas: {{ followed_count }}</p> <!-- Mostrar el número de cuentas seguidas -->
+
+    <form action="/start_bot" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Iniciar Bot</button>
+    </form>
+
+    <form action="/stop_bot" method="POST">
+        <button type="submit">Detener Bot</button>
+    </form>
+</body>
+</html>
